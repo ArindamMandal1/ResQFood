@@ -1,13 +1,6 @@
 // src/pages/Dashboard.jsx
 import React, { useEffect, useState } from "react";
 
-/*
-  Dashboard.jsx
-  - Paste into src/pages/Dashboard.jsx (replace existing)
-  - Uses Tailwind classes to match your site styling
-  - Local-state demo: posts are stored only in memory (no backend)
-*/
-
 function Icon({ children }) {
   return <span className="mr-3 text-green-600">{children}</span>;
 }
