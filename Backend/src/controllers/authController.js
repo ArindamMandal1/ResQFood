@@ -94,11 +94,12 @@ export const login = async(req, res) => {
         const token = signToken(user);
 
         res.cookie("token", token, {
-            httpOnly : true,
-            secure : process.env.NODE_ENV === "production",
-            sameSite: "lax",
+            httpOnly: true,
+            secure: true,       // required on render (https)
+            sameSite: "none",   // required for cross-site cookies
             maxAge: 24 * 60 * 60 * 1000
-        })
+        });
+
 
         res.json({ success : true, message : "Logged in successfully", user : { id : user._id, role : user.role, name : user.name } });
 
